@@ -16,5 +16,19 @@ print(sin(radians(30)))  # sin(30 degrees) = 0.5
 # here's one example.
 # y = 0.5
 # y.
-# y.as_integer_ratio()
+# y.as_integer_ratio() / biến thành phân số
 
+y = 0.5
+print(y.as_integer_ratio())  # (1, 2)
+
+mystr = "hello"
+print(mystr.capitalize())  # Hello
+
+# Properties are similar to methods in being applied to an object, but there are no parameters, thus no () ;
+# they simply are a property of some sort. Once again, to see what properties are available to an object, press
+# tab after the dot. Try it out
+# x = 2
+# x.
+# x.denominator
+x = 2
+print(x.denominator)
