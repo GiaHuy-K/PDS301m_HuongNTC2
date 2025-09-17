@@ -1,0 +1,18 @@
+Hàm	                Mô tả chức năng
+Hàm int()	        Chuyển đổi x thành một số nguyên. Tham số base chỉ định cơ số nếu x là một chuỗi (ví dụ: int(“10”, 2) sẽ chuyển chuỗi nhị phân “10” thành số nguyên 2).
+Hàm long()	        Chuyển đổi x thành một số nguyên dài. Tham số base chỉ định cơ số nếu x là một chuỗi. (Lưu ý: Hàm này đã không còn được khuyến khích sử dụng trong Python 3).
+Hàm float()	        Chuyển đổi x thành một số thực (số thập phân).
+Hàm complex()	    Tạo ra một số phức.
+Hàm str()	        Chuyển đổi đối tượng x thành một chuỗi ký tự.
+Hàm repr()	        Chuyển đổi đối tượng x thành một chuỗi biểu thức.
+Hàm eval()	        Đánh giá một chuỗi và trả về một đối tượng (ví dụ, eval(“2 + 3”) sẽ trả về số nguyên 5). Cần cẩn thận khi sử dụng vì hàm này có thể thực thi code).
+Hàm tuple()	        Chuyển đổi s thành một tuple (một loại danh sách không thể thay đổi).list() Chuyển đổi s thành một danh sách (list).
+Hàm list()	        Chuyển đổi s thành một danh sách (list).
+Hàm set()	        Chuyển đổi s thành một set (tập hợp các phần tử duy nhất).
+Hàm dict()	        Tạo một dictionary (từ điển). Tham số d phải là một chuỗi các tuple (key, value).
+Hàm frozenset()	    Chuyển đổi s thành một frozenset (tập hợp các phần tử duy nhất, không thể thay đổi).
+Hàm chr()	        Chuyển đổi một số nguyên thành một ký tự (theo bảng mã ASCII).
+Hàm unichr()	    Chuyển đổi một số nguyên thành một ký tự Unicode. (Lưu ý: Hàm này đã không còn được sử dụng nhiều từ Python 3 trở đi).
+Hàm ord()	        Chuyển đổi một ký tự đơn thành giá trị số nguyên (theo bảng mã ASCII) tương ứng của nó.
+Hàm hex()	        Chuyển đổi một số nguyên thành một chuỗi hexa (hệ cơ số 16).
+Hàm oct()	        Chuyển đổi một số nguyên thành một chuỗi octal (hệ cơ số 8).

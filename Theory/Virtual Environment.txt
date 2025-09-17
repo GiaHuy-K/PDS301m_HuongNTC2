@@ -1,0 +1,22 @@
+venv: Là một module tích hợp sẵn trong Python, giúp tạo Virtual Environment trong Python.
+
+Virtual Environment: Là một không gian làm việc độc lập, có bộ cài đặt Python và các thư viện riêng biệt. Môi trường ảo giúp các dự án không bị ảnh hưởng bởi thư viện của các dự án khác.
+md\pythonapp và cd\pythonapp: Các lệnh này để tạo thư mục pythonapp và chuyển vào trong thư mục đó.
+
+python -m venv myvenv: Lệnh này sử dụng module venv để tạo một môi trường ảo có tên myvenv trong thư mục hiện tại. -m có nghĩa là chạy một module.
+
+Thư mục Include: Thư mục này thường chứa các file tiêu đề (header file) C khi cài các package mở rộng (nếu có).
+
+Thư mục Lib: Nơi lưu các thư viện của Virtual Environment trong Python.
+
+File pyvenv.cfg: File cấu hình môi trường ảo.
+
+Thư mục Scripts (hoặc bin trên MacOS và Linux): Nơi chứa các file thực thi để kích hoạt/hủy môi trường ảo (ví dụ: activate, deactivate) và bản sao Python interpreter cục bộ.
+
+activate: Các file có tên này để kích hoạt môi trường ảo. Có các phiên bản khác nhau cho các hệ điều hành khác nhau.
+
+deactivate.bat: File để tắt môi trường ảo.
+
+pip.exe, pip3.exe…: Các file thực thi của trình quản lý gói pip để cài đặt thư viện.
+
+python.exe, pythonw.exe: Các file thực thi của trình thông dịch Python trong môi trường ảo.

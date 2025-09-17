@@ -1,0 +1,8 @@
+1. Cài đặt môi trường cho python 
+https://www.python.org/
+2. Học lý thuyết và thực hành 
+https://vietnix.vn/hoc-lap-trinh/python/ 
+https://www.w3schools.com/python 
+
+2. Tìm hiểu về framework Flask : 
+https://200lab.io/blog/flask-la-gi 
