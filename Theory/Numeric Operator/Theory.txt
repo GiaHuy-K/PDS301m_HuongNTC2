@@ -1,0 +1,101 @@
+Để hiểu rõ hơn về toán tử, chúng ta cùng làm quen với một vài khái niệm liên quan:
+
+Toán hạng (Operands): Là các biến, giá trị, hoặc biểu thức được dùng cùng với toán tử để thực hiện một phép toán nào đó.
+Toán tử một ngôi (Unary operators): Đây là các toán tử yêu cầu một toán hạng để thực hiện phép toán.
+Toán tử hai ngôi (Binary operators): Các toán tử này cần hai toán hạng để thực hiện phép toán.
+
+Các loại toán tử trong Python
+Các toán tử trong Python được chia thành các nhóm sau, dựa trên chức năng mà các toán tử đó thực hiện:
+
+- Toán tử số học (Arithmetic Operators): 
+Dùng để thực hiện các phép tính toán học cơ bản như cộng, trừ, nhân, chia, và các phép toán liên quan khác.
+- Toán tử so sánh (Comparison/Relational Operators): 
+Được sử dụng để so sánh hai toán hạng. Kết quả của phép so sánh này thường là True (đúng) hoặc False (sai). 
+Ví dụ: kiểm tra xem một số có lớn hơn, nhỏ hơn, hay bằng một số khác.
+- Toán tử gán (Assignment Operators): 
+Dùng để gán giá trị cho biến. Toán tử gán cơ bản nhất là dấu bằng (=). 
+Ngoài ra còn có các toán tử gán kết hợp (ví dụ: +=, -=, *=,…)
+- Toán tử logic (Logical Operators): 
+Dùng để kết hợp các biểu thức điều kiện. Ví dụ như phép “và”, “hoặc”, “phủ định” ( and, or, not ).
+- Toán tử bitwise (Bitwise Operators): 
+Thực hiện các thao tác trên từng bit của các số nguyên. 
+Thường được dùng trong các tác vụ liên quan đến việc thao tác trực tiếp với bit ở mức thấp.
+- Toán tử thành viên (Membership Operators): 
+Dùng để kiểm tra xem một giá trị có nằm trong một chuỗi, list, tuple hay set hay không (ví dụ: in, not in).
+- Toán tử nhận dạng (Identity Operators): 
+So sánh các đối tượng có giống nhau về địa chỉ bộ nhớ hay không (ví dụ: is, is not).
+
+1. Tác động của các toán tử số học trong Python
+Toán tử số học trong Python được dùng để thực hiện các phép toán cơ bản, quen thuộc như cộng, trừ, nhân, chia… 
+Các toán tử này là nền tảng cho việc thực hiện các tính toán trong chương trình.
+
+Bảng dưới đây liệt kê tất cả các toán tử số học trong Python, kèm theo ký hiệu, tên gọi và ví dụ minh họa 
+(giả sử biến a có giá trị 10 và biến b có giá trị 20):
+
+Toán tử	        Tên	                        Ví dụ
++	        Phép cộng	                a + b = 40
+–	        Phép trừ	                a – b = -20
+*	        Phép nhân	                a * b = 300
+/	        Phép chia	                b / a = 3
+%	        Mô đun (Phép chia lấy dư)	b % a = 0
+**	        Số mũ	                    a**b =10**30
+//	Phép chia lấy phần nguyên	        9//2 = 4
+
+2. Toán tử so sánh trong Python
+Toán tử so sánh trong Python (còn được gọi là toán tử quan hệ) dùng để so sánh giá trị giữa hai vế và xác định mối quan hệ giữa chúng. 
+Kết quả của một phép so sánh sẽ luôn là True (đúng) hoặc False (sai).
+
+Các toán tử so sánh trong Python bao gồm:
+
+Toán tử	        Tên	                    Ví dụ
+==	        Bằng	                (a == b) is not true.
+!=	        Không bằng	            (a != b) is true.
+>	        Lớn hơn	                (a > b) is not true.
+<	        Nhỏ hơn	                (a < b) is true.
+>=	        Lớn hơn hoặc bằng	    (a >= b) is not true.
+<=	        Nhỏ hơn hoặc bằng	    (a <= b) is true.
+
+3.Toán tử Bitwise trong Python
+Toán tử Bitwise trong Python thực hiện các phép toán trên từng bit của số nhị phân. 
+Các toán tử này thường được dùng để so sánh và thao tác trực tiếp trên các số nhị phân.
+
+Dưới đây là bảng liệt kê các toán tử Bitwise cùng với ký hiệu, tên gọi và ví dụ minh họa:
+
+Toán tử	    Tên                         Ví dụ
+&	        AND	                        a & b
+|	        OR	                        a | b
+^	        XOR	                        a ^ b
+~	        NOT	                         ~a
+<<	        Zero fill left shift	    a << 3
+>>	        Signed right shift	        a >> 3
+
+4. Toán tử logic trong Python
+Toán tử logic trong Python được sử dụng để kết hợp hai hay nhiều điều kiện và kiểm tra kết quả cuối cùng của sự kết hợp đó. 
+Python hỗ trợ một số toán tử logic cơ bản, chúng ta hãy cùng tìm hiểu.
+
+Để dễ hình dung, chúng ta giả sử có hai biến a và b, với giá trị lần lượt là a = 10 và b = 20. Các toán tử logic sẽ hoạt động như sau:
+
+Toán tử	    Tên	    Ví dụ
+and	        AND	    a and b
+or	        OR	    a or b
+not	        NOT	    not(a)
+
+5. Toán tử membership trong Python
+Toán tử membership trong Python được dùng để kiểm tra xem một giá trị có nằm trong một chuỗi (sequence) hay không.
+Chuỗi ở đây có thể là các kiểu dữ liệu như chuỗi ký tự (string), danh sách (list), hoặc bộ (tuple).
+
+Có hai toán tử membership chính trong Python:
+
+Toán tử	                            Mô tả	                                                            Ví dụ
+in	        Trả về True nếu tìm thấy một biến trong chuỗi đã cho, ngược lại trả về False.	           a in b
+not in	    Trả về True nếu không tìm thấy một biến trong chuỗi đã cho, ngược lại trả về False.	       a not in b
+
+6. Toán tử Identity trong Python
+Toán tử Identity trong Python dùng để so sánh vị trí bộ nhớ của hai đối tượng.
+ Không giống như việc so sánh giá trị, các toán tử này xem xét liệu hai biến có đang tham chiếu đến cùng một đối tượng trong bộ nhớ hay không.
+
+Có hai toán tử Identity, được mô tả chi tiết như sau:
+
+Toán tử	                            Mô tả	                                                                    Ví dụ
+is	        Trả về True nếu hai biến cùng tham chiếu đến một đối tượng duy nhất, ngược lại trả về False.	    a is b
+is not	    Trả về True nếu hai biến không cùng tham chiếu đến một đối tượng, ngược lại trả về False.	        a is not b
