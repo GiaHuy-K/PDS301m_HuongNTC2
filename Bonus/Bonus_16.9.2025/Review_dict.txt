@@ -1,0 +1,38 @@
+1.	What is a dictionary?
+-Trong Python, từ điển (Dictionary) là một kiểu dữ liệu Dict tích hợp sẵn được dùng để lưu trữ dữ liệu dưới dạng các cặp key – value. 
+-Đây là một tập hợp không có thứ tự, có thể thay đổi và được lập chỉ mục. 
+-Mỗi khóa trong từ điển là duy nhất và ánh xạ đến một giá trị. 
+-dictionaries thường được dùng để lưu trữ dữ liệu có liên quan, chẳng hạn như thông tin về một đối tượng hoặc thực thể, 
+giúp truy xuất dữ liệu nhanh hơn thông qua key.
+-Key phải duy nhất, value có thể trùng.
+
+2.	Are dictionaries case-sensitive?
+Có. Key "Name" và "name" được coi là khác nhau.
+
+3.	What are different ways of creating a Dictionary? ( 4 ways, try it yourself)
+
+4.	What is a Nested Dictionary? How is it created?
+Nested Dictionary Là dictionary chứa dictionary khác.
+
+5.	How do you add an element in Dictionary? (3 ways, try it yourself)
+d = {"a": 1}
+
+# Cách 1: gán trực tiếp
+d["b"] = 2
+
+# Cách 2: dùng update()
+d.update({"c": 3})
+
+# Cách 3: dùng setdefault()
+d.setdefault("d", 4)
+
+6.	Methods in dictionary: clear(), copy(), items(), keys(), values(), update(), ...
+
+7.	Create a dictionary from a given list (zip function)
+8.	Create a list from the dictionary
+9.	Create a list of tuples from the dictionary
+10.	How can you delete key-value pair from Dictionary?
+11.	Is the dictionary mutable?
+12.	Given two lists, create a dictionary from them.
+13.	Write a code to sort dictionaries using a key.
+
