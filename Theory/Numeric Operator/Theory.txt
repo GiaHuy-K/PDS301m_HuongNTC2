@@ -99,3 +99,9 @@ Có hai toán tử Identity, được mô tả chi tiết như sau:
 Toán tử	                            Mô tả	                                                                    Ví dụ
 is	        Trả về True nếu hai biến cùng tham chiếu đến một đối tượng duy nhất, ngược lại trả về False.	    a is b
 is not	    Trả về True nếu hai biến không cùng tham chiếu đến một đối tượng, ngược lại trả về False.	        a is not b
+
+
+Có ba cách để tạo một đối tượng số nguyên:
+(a) biểu diễn trực tiếp bằng ký tự (literal), 
+(b) từ một biểu thức trả về kết quả là số nguyên,
+và (c) sử dụng hàm int().

@@ -1,0 +1,8 @@
+Control statement.
+Trong lập trình: câu lệnh điều khiển là những lệnh dùng để quyết định luồng thực thi của chương trình, gồm:
+
+Selection (rẽ nhánh): if, if...else, switch
+
+Looping (lặp): for, while, do...while
+
+Jump (nhảy): break, continue, return
