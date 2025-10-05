@@ -45,3 +45,4 @@ print (str + " (Test)")  # In ra chuỗi đã được ghép
 
 input("\n\nNhấn Enter để thoát")
 
+# :D
