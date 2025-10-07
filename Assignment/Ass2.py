@@ -9,8 +9,8 @@
 # danh sách items, prices, category, discounts
 items_list = ['Apple', 'Milk', 'Chips','Carrot']
 prices_dict = {'Apple': 2.0, 'Milk' : 3 , 'Chips' : 1,'Carrot' : 2.5}
-category_list = ['Fruits', 'Vegatables', 'Dairy', 'Snacks']
-dicount_dict = {'Fruits' : 0.1 , 'Vegatables' : 0.05, 'Dairy': 0.01, 'Snacks': 0.1}
+category_list = ['Fruits', 'Dairy', 'Snacks', 'Vegetables']
+discount_dict = {'Fruits' : 0.1 , 'Vegetables' : 0.05, 'Dairy': 0.01, 'Snacks': 0.1}
 
 # input budget , flag và total
 budget_input = float(input("Enter your budget: $"))
@@ -33,7 +33,7 @@ while within_budget:
     
     # lấy giá và discount
     price = prices_dict[item]
-    discount = dicount_dict[category]
+    discount = discount_dict[category]
     final_price = price * (1 - discount)
     total += final_price
     
@@ -43,7 +43,7 @@ while within_budget:
         within_budget = False
     
     # Lưu record
-    purchases.append((item,category,price,discount,final_price))
+    purchases.append((item, category, price, discount, final_price))
     
     # cập nhật ngân sách 
     budget_input -= final_price
@@ -52,7 +52,7 @@ while within_budget:
     print("\n")
     
 print("\n=================================RECEIPT===================")
-print("{:<10} {:<12} {:<10} {:<10} {:<10}".format("Item","Category","Price","Discount","Final Price"))
+print("{:<10} {:<12} {:<10} {:<10} {:<10}".format("Item", "Category", "Price", "Discount", "Final Price"))
 for item, category, price, discount, final_price in purchases:
     print("{:<10} {:<12} ${:<9.2f} {:<10.0%} ${:<10.2f}".format(item, category, price, discount, final_price))
 print("\n============================================================")
