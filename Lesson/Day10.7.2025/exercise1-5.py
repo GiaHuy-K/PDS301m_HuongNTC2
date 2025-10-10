@@ -55,8 +55,10 @@ class Circle:
 
     def perimeter(self):
         return 2 * 3.14 * self.radius
+c = Circle(0)
+x = float(input("Enter the radius of the circle: "))
+c.radius = float(x)
 
-c = Circle(5)
 print("Area: {:.2f}".format(c.area()))
 print("Perimeter: {:.2f}".format(c.perimeter()))
 
