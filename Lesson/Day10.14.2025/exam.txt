@@ -1,0 +1,56 @@
+A small community clinic wants to move from handwritten health notes to a simple computer system that tracks patient information and 
+basic health indicators such as blood pressure (BP), weight, and age.
+Your job is to build a simple console-based management system in Python.
+System Requirements
+1. Class Definitions
+Class Patient
+
+Attributes
+
+patient_id (string)
+
+name (string)
+
+age (integer)
+
+weight (float)
+
+bp (tuple) — e.g., (systolic, diastolic)
+
+Methods
+
+__init__(...) — initialize patient info
+
+is_high_bp() — returns True if BP > (140, 90)
+
+calculate_bmi(height) — returns BMI (optional enhancement)
+
+__str__() — display formatted patient info
+
+Class Clinic
+
+Attribute
+
+patients — list of Patient objects
+
+Methods
+
+add_patient(patient) — add new patient
+
+find_patient_by_id(patient_id) — return patient if exists
+
+show_all_patients() — display all records
+
+show_high_bp_patients() — display patients with high BP
+
+remove_patient(patient_id) — delete a record (optional)
+
+save_to_file(filename) / load_from_file(filename) (bonus)
+
+3. Add patient sorting by age or BMI.
+4. Save all patients to a CSV or JSON file
+5. Search patients by name keyword (not only by ID).
+6. Sort patients by age, BMI, or blood pressure using
+7. Create a new class Visit to mange Visit History concerning the data of visitors who visited patient.
+8. Create a new class to manage Clinic Staff and Role Management, 
+regarding role based access (username, password) for Doctor, Receptionist, Admin
