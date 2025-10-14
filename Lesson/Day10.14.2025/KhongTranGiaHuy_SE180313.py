@@ -138,6 +138,15 @@ def floatValidate(prompt):
         except ValueError:
             print("Invalid input. Please enter a number.")
             continue
+
+def StringValidate(prompt):
+    while True:
+        value = input(prompt).strip()
+        if value:
+            return value
+        else:
+            print("Input cannot be empty. Please enter a valid string.")
+            continue
 # 7. Create a new class Visit to manage Visit History concerning the data of visitors who visited patient.
 class Visit:
     def __init__(self):
@@ -174,8 +183,8 @@ def main():
     staff_management.add_staff("huy", "huy", "Nurse")
     
     print("Welcome to the Clinic Management System")
-    username = input("Enter your username: ")
-    password = input("Enter your password: ")
+    username = StringValidate("Enter your username: ")
+    password = intValidate("Enter your password: ")
     role = staff_management.authenticate(username, password)
     # Kiểm tra quyền truy cập
     if role == "Doctor" or role == "Receptionist" or role == "Admin":
@@ -203,8 +212,8 @@ def main():
 
 
         if choice == "1":
-            patient_id = input("Enter patient ID: ")
-            name = input("Enter patient name: ")
+            patient_id = StringValidate("Enter patient ID: ")
+            name = StringValidate("Enter patient name: ")
             age = intValidate("Enter patient age: ")
             weight = floatValidate("Enter patient weight (kg): ")
             height = floatValidate("Enter patient height (m): ")
@@ -217,9 +226,9 @@ def main():
             
         elif choice == "2":
             clinic.show_all_patients()
-            print("Do you want to sort patients? (yes/no)")
-            if input().lower() == 'yes':
-                sort_key = input("Enter sort key (age/bmi): ").lower()
+            user_choice = StringValidate("Do you want to sort patients? (yes/no)")
+            if user_choice.lower() == 'yes':
+                sort_key = StringValidate("Enter sort key (age/bmi): ").lower()
                 clinic.sort_patients(sort_key)
                 clinic.show_all_patients()
         
@@ -227,41 +236,43 @@ def main():
             print("Search by:")
             print("1. Patient ID")
             print("2. Name keyword")
-            search_option = input("Choose an option (1-2): ")
+            search_option = StringValidate("Choose an option (1-2): ")
             if search_option == "1":
-                search_id = input("Enter patient ID to search: ")
+                search_id = StringValidate("Enter patient ID to search: ")
                 patient = clinic.find_patient_by_id(search_id)
                 if patient:
                     print(patient)
                 else:
                     print("Patient not found.")
             elif search_option == "2":
-                search_name = input("Enter name keyword to search: ")
+                search_name = StringValidate("Enter name keyword to search: ")
                 patients = clinic.find_patients_by_name(search_name)
                 if patients:
                     for p in patients:
                         print(p)
                 else:
                     print("No patients found.")
+                    
         elif choice == "4":
             clinic.show_high_bp_patients()
+            
         elif choice == "5":
-            remove_id = input("Enter patient ID to remove: ")
+            remove_id = StringValidate("Enter patient ID to remove: ")
             if clinic.remove_patient(remove_id):
                 print("Patient removed successfully.")
             else:
                 print("Patient not found.")
+                
         elif choice == "6":
             clinic.save_to_file()
+            print("Patients saved to file successfully.")
         elif choice == "7":
             clinic.load_from_file()
-            # elif choice == "8":
-            #     print("Not done yet")
-            # elif choice == "9":
-            #     print("Not done yet")
+            print("Patients loaded from file successfully.")
         elif choice == "8":
             print("Exiting...")
             break
+        
         else:
             print("Invalid choice. Please enter a number between 1 and 8.")
 
