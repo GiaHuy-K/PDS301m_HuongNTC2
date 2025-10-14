@@ -33,7 +33,7 @@ class Patient:
                 f"High BP: {'Yes' if self.is_high_bp() else 'No'}")
 
 # Class Clinic
-class Clinic(Patient):
+class Clinic():
     def __init__(self):
         self.patients = []
 
@@ -84,9 +84,11 @@ class Clinic(Patient):
         try:
             with open("patients.csv", "w", newline="") as file:
                 writer = csv.writer(file)
-                writer.writerow(["Patient ID", "Name", "Age", "Weight", "Height", "Systolic BP", "Diastolic BP"])
+                writer.writerow(["Patient ID", "Name", "Age", "Weight", "Height"
+                                 , "Systolic BP", "Diastolic BP"])
                 for patient in self.patients:
-                    writer.writerow([patient.patient_id, patient.name, patient.age, patient.weight, patient.height, patient.bp[0], patient.bp[1]])
+                    writer.writerow([patient.patient_id, patient.name, patient.age,
+                                     patient.weight, patient.height,patient.bp[0], patient.bp[1]])
             print(f"Data saved to patients.csv")
         except IOError as e:
             print(f"Error saving file: {e}")
@@ -99,7 +101,8 @@ class Clinic(Patient):
                 next(reader)  # Skip header row
                 for row in reader:
                     patient_id, name, age, weight, height, systolic, diastolic = row
-                    patient = Patient(patient_id, name, int(age), float(weight), float(height), (int(systolic), int(diastolic)))
+                    patient = Patient(patient_id, name, int(age), float(weight), 
+                                      float(height), (int(systolic), int(diastolic)))
                     self.add_patient(patient)
             print(f"Data loaded from patients.csv")
         except FileNotFoundError:
