@@ -11,15 +11,18 @@ class Patient:
         self.height = height
         self.bp = bp  # (systolic, diastolic)
 
+    # Check if patient has high blood pressure - R
     def is_high_bp(self):
         systolic, diastolic = self.bp
-        return systolic > 140 or diastolic > 90
+        return systolic > 140 and diastolic > 90
 
+    # Calculate BMI - R
     def calculate_bmi(self):
         if self.height <= 0:
             return None
         return self.weight / (self.height ** 2)
 
+    # String representation of Patient - R
     def __str__(self):
         bmi = self.calculate_bmi()
         bmi_str = f"{bmi:.2f}" if bmi is not None else "N/A"
@@ -37,15 +40,18 @@ class Clinic():
     def __init__(self):
         self.patients = []
 
+    # Add a new patient - C
     def add_patient(self, patient):
         self.patients.append(patient)
 
+    # Search patient by id - R
     def find_patient_by_id(self, patient_id):
         for patient in self.patients:
             if patient.patient_id == patient_id:
                 return patient
         return None
     
+    # Search patient by name keyword - R
     def find_patients_by_name(self, keyword):
         found_patients = []
         # Chuyển keyword về chữ thường để tìm kiếm không phân biệt hoa/thường
@@ -55,6 +61,7 @@ class Clinic():
                 found_patients.append(patient)
         return found_patients
     
+    # View all patients - R
     def show_all_patients(self):
         if not self.patients:
             print("No patients in the clinic.")
@@ -62,6 +69,7 @@ class Clinic():
             print(patient)
             print("-" * 20)
 
+    # View patients with high blood pressure - R
     def show_high_bp_patients(self):
         high_bp_found = False
         print("High Blood Pressure Patients:")
@@ -73,6 +81,7 @@ class Clinic():
         if not high_bp_found:
             print("No patients with high blood pressure.")
 
+    # Remove patient by id - D
     def remove_patient(self, patient_id):
         patient = self.find_patient_by_id(patient_id)
         if patient:
@@ -80,6 +89,7 @@ class Clinic():
             return True
         return False
 
+    # Save and Load patients to/from CSV file - R/W
     def save_to_file(self):
         try:
             with open("patients.csv", "w", newline="") as file:
@@ -93,12 +103,13 @@ class Clinic():
         except IOError as e:
             print(f"Error saving file: {e}")
 
+    # Load patients from CSV file - R
     def load_from_file(self ):       
         self.patients.clear()
         try:
             with open("patients.csv", "r", newline="") as file:
                 reader = csv.reader(file)
-                next(reader)  # Skip header row
+                next(reader)  # bỏ qua header trong file csv
                 for row in reader:
                     patient_id, name, age, weight, height, systolic, diastolic = row
                     patient = Patient(patient_id, name, int(age), float(weight), 
@@ -109,7 +120,8 @@ class Clinic():
             print(f"No such file: patients.csv")
         except Exception as e:
             print(f"An error occurred while loading the file: {e}")
-            
+    
+    # Sort patients by age or BMI - U       
     def sort_patients(self, key):
         if key == 'age':
             self.patients.sort(key=lambda patient: patient.age)
@@ -164,8 +176,12 @@ class Staff:
 class StaffManagement:
     def __init__(self):
         self.staff_list = []
+    
+    # Add staff member - C
     def add_staff(self, username, password, role):
         self.staff_list.append(Staff(username, password, role))
+        
+    # Authenticate staff member - Authentication
     def authenticate(self, username, password):
         for staff in self.staff_list:
             if staff.username == username and staff.password == password:
@@ -176,6 +192,7 @@ class StaffManagement:
 def main():
     clinic = Clinic()
     staff_management = StaffManagement()
+    
     # hardcode nhân viên cho demo
     staff_management.add_staff("doctor1", "123456", "Doctor")
     staff_management.add_staff("receptionist1", "123456", "Receptionist")
@@ -186,6 +203,7 @@ def main():
     username = StringValidate("Enter your username: ")
     password = intValidate("Enter your password: ")
     role = staff_management.authenticate(username, password)
+    
     # Kiểm tra quyền truy cập
     if role == "Doctor" or role == "Receptionist" or role == "Admin":
         print(f"Login successful! Welcome {role}.")
