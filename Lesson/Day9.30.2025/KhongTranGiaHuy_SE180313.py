@@ -21,7 +21,8 @@ elif score_input >= 90 and score_input <= 100 :
     print("A")
     
 # Q2: Supermarket Bill Calculator (for loop)
-# A supermarket cashier scans the prices of items in a shopping cart. Write a program that uses a for loop to calculate the total bill.
+# A supermarket cashier scans the prices of items in a shopping cart.
+# Write a program that uses a for loop to calculate the total bill.
 # Requirement: The cashier enters the prices of n items. The program should display the total amount.
 print("============================ Q2 ============================")
 items_input = int(input("Enter the amount of item that you wanna calculate:"))
@@ -33,7 +34,8 @@ print(f"The total of {items_input} item is: {total}")
 
 # Q3: Bus Ticket Purchase (while loop)
 # A person buys bus tickets until they run out of money. Each ticket costs 15 VND.
-# Requirement: Start with an initial balance. Use a while loop to simulate buying tickets until balance is insufficient. 
+# Requirement: Start with an initial balance.
+# Use a while loop to simulate buying tickets until balance is insufficient. 
 # Display how many tickets were bought and the remaining balance.
 print("============================ Q3 ============================")
 balance = int(input("Enter your initial balance: VND "))
@@ -59,12 +61,22 @@ print(f"Your remain balance: {balance} VND")
 print("============================ Q4 ============================")
 names = []
 
-# add
+# add C
 def add_name():
     name = input("Enter the name u wanna add: ")
     names.append(name)
     print(f"{name} has been added.")
-# change 
+    
+# view R
+def view_names():
+    if not names:
+        print("The list is empty.")
+    else:
+        print("Current names in the list:")
+        for i, name in enumerate(names, start=1):
+            print(f"{i}. {name}")
+            
+# change U
 def change_name():
     if not names:
         print("The list is empty. Nothing to change.")
@@ -81,7 +93,8 @@ def change_name():
             print("Invalid selection.")
     except ValueError:
         print("Please enter a valid number.")
-# delete
+        
+# delete D
 def delete_name():
     if not names:
         print("The list is empty. Nothing to delete.")
@@ -96,14 +109,7 @@ def delete_name():
             print("Invalid selection.")
     except ValueError:
         print("Please enter a valid number.")
-# view
-def view_names():
-    if not names:
-        print("The list is empty.")
-    else:
-        print("Current names in the list:")
-        for i, name in enumerate(names, start=1):
-            print(f"{i}. {name}")
+
 # main  
 def main():
     while True:
