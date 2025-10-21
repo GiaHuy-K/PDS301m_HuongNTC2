@@ -201,7 +201,7 @@ def main():
     
     print("Welcome to the Clinic Management System")
     username = StringValidate("Enter your username: ")
-    password = intValidate("Enter your password: ")
+    password = StringValidate("Enter your password: ")
     role = staff_management.authenticate(username, password)
     
     # Kiểm tra quyền truy cập
