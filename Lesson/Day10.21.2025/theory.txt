@@ -1,0 +1,43 @@
+📊 9 dấu hiệu cho thấy bạn đã thật sự hiểu vai trò Data Analyst 
+1.💡Hiểu mục tiêu trước khi mở Power BI
+ Bạn không bắt đầu bằng “dashboard cần bao nhiêu chart”,
+ mà hỏi: “sếp cần ra quyết định gì từ dữ liệu này?”.
+ → Vì Data Analyst không chỉ kể chuyện, mà phải kể đúng chuyện.
+2. 🧭 Luôn bắt đầu từ câu hỏi kinh doanh (Business Question)
+ Thay vì hỏi “Doanh thu tăng chưa?”, bạn hỏi:
+ – “Doanh thu tăng nhờ yếu tố nào?”
+ – “Nếu giữ nguyên giá, lợi nhuận có tăng không?”
+ Bạn biết: không có câu hỏi tốt → không có insight đúng.
+
+3. 🧠 Tư duy hệ thống, không chạy theo công cụ
+ Bạn hiểu Power BI, SQL, Python… chỉ là phương tiện.
+ Thứ quan trọng hơn là logic kết nối giữa dữ liệu – KPI – hành động.
+
+4. 🔍 Biết phân tầng phân tích
+ Bạn phân biệt rõ:
+ – Descriptive → kể lại chuyện
+ – Diagnostic → lý giải chuyện
+ – Predictive → dự đoán chuyện
+ – Prescriptive → đề xuất hành động
+ Và bạn biết mình đang ở tầng nào trong từng báo cáo.
+
+5. 📊 Dashboard không để “trang trí”
+ Bạn không tự hào vì chart đẹp, mà vì người dùng hiểu câu chuyện trong 5 giây đầu.
+ BI là decision tool, không phải decoration tool.
+
+6. 🧩 Biết hợp tác thay vì làm một mình
+ Bạn hiểu Data Analyst không thể tồn tại tách biệt:
+ phải kết nối với Marketing, Finance, Sales để hiểu bối cảnh dữ liệu.
+ Phân tích tốt = giao tiếp tốt.
+
+7. 🚀 Dữ liệu không chỉ phản ánh quá khứ — nó định hướng tương lai
+ Bạn dùng phân tích để dự đoán, mô phỏng, thậm chí thách thức giả định.
+ Đó là khi bạn bắt đầu “dẫn dắt bằng dữ liệu”, không còn “phản ứng bằng dữ liệu”.
+
+8. 🎯 Bạn đã thôi so sánh với người khác
+ Không còn chạy theo kỹ năng hot.
+ Vì bạn hiểu: giá trị thật nằm ở tư duy giải quyết vấn đề, không phải câu lệnh.
+
+9. 🌟 Và bạn biết — hành trình này không kết thúc
+ Hiểu vai trò Data Analyst chỉ là bước đầu.
+ Thật sự làm chủ nó là cả quá trình học cách nhìn thế giới qua lăng kính dữ liệu.
