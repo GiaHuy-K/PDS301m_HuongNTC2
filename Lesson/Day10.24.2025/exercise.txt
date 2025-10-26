@@ -1,0 +1,5 @@
+1. print the first and last 20 rows of dataset
+
+data collection ( clean data) --> pre-processing data --> analyst --> prediction
+2. Clean above data file and update the CSV file (replace values which contain ?, n.a or NaN
+3. tìm xe có giá cao nhất
