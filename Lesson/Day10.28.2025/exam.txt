@@ -1,0 +1,25 @@
+https://www.kaggle.com/datasets/spscientist/students-performance-in-exams
+Download dataset and write code to process below requirements:
+1. How many rows and columns the dataset has.
+2. Display unique values in gender and race/ethnicity
+3. Find which column has the highest average value
+4. Check for missing values.
+
+5. Replace any missing test scores with the mean.
+
+6. Rename columns to simpler names (e.g., math instead of math score)
+7. Find average scores grouped by gender.
+
+8. Find which race/ethnicity group performs best in reading.
+
+9. Find the student(s) with the highest total score
+10. Add a column for total and average scores.
+
+11. Create a new column pass_math (True if math ≥ 50).
+
+12. Show how many students passed all three subjects
+.mean().idxmax()
+df[column] = df[column].fillna(mean_value)
+(df.isnull().sum())
+df.groupby('gender')[['math', 'reading', 'writing']].mean()
+print(df['gender'].unique())
