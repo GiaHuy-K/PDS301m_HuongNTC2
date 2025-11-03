@@ -1,0 +1,21 @@
+--- TÓM TẮT KHO HÀNG ---
+Món hàng: Apple (Fruits)
+  Giá: $1.50
+  Tồn kho: 100
+  Giảm giá: 10%
+  Tổng giá trị món: $150.00
+---------------------
+Món hàng: Milk (Dairy)
+  Giá: $2.00
+  Tồn kho: 50
+  Giảm giá: 5%
+  Tổng giá trị món: $100.00
+---------------------
+Món hàng: Bread (Bakery)
+  Giá: $3.25
+  Tồn kho: 30
+  Giảm giá: 0%
+  Tổng giá trị món: $97.50
+---------------------
+
+GIÁ TRỊ TỔNG CỘNG CỦA KHO HÀNG: $347.50
