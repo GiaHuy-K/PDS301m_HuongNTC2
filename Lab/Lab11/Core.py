@@ -1,8 +1,9 @@
 # app.py
 from flask import Flask, jsonify, request
-
+from flask_cors import CORS
 # Khởi tạo ứng dụng Flask
 app = Flask(__name__)
+CORS(app)
 
 # --- Kho dữ liệu "trong bộ nhớ" (để đơn giản) ---
 # Trong ứng dụng thật, đây sẽ là một cơ sở dữ liệu (database).

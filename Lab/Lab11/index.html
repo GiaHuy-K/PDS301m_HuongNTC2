@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test API Tasks (Full CRUD)</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    </body>
+</html>
+<body>
+
+    <h1>Quản lý Tasks (Frontend Demo)</h1>
+
+    <h2>Tạo Task Mới (POST)</h2>
+    <div id="create-form">
+        <input type="text" id="task-title" placeholder="Nhập Title...">
+        <input type="text" id="task-desc" placeholder="Nhập Description...">
+        <button id="btn-create" style="background-color: #28a745;">Tạo Task</button>
+    </div>
+
+    <h2>Danh sách Tasks (GET)</h2>
+    <ul id="task-list">
+        <li>Đang tải...</li>
+    </ul>
+
+    <script>
+        const API_URL = 'http://127.0.0.1:5000/tasks'; // Địa chỉ backend Flask
+
+        // --- 1. [GET] Lấy và hiển thị tất cả tasks ---
+        // (Đây là hàm chính để làm mới danh sách)
+        function loadTasks() {
+            fetch(API_URL)
+                .then(response => response.json())
+                .then(data => {
+                    const taskListElement = document.getElementById('task-list');
+                    taskListElement.innerHTML = ''; // Xóa list cũ
+
+                    if (data.tasks.length === 0) {
+                        taskListElement.innerHTML = '<li>Không có task nào.</li>';
+                        return;
+                    }
+
+                    data.tasks.forEach(task => {
+                        const li = document.createElement('li');
+                        
+                        // Thêm class nếu task đã 'done'
+                        li.className = task.done ? 'task-done-true' : '';
+                        
+                        // Thêm nội dung (ID, Title, Desc)
+                        const taskInfo = document.createElement('span');
+                        taskInfo.className = 'task-info';
+                        taskInfo.textContent = `[ID: ${task.id}] ${task.title} (${task.description})`;
+                        li.appendChild(taskInfo);
+
+                        // --- Nút Cập nhật (PUT) ---
+                        const updateButton = document.createElement('button');
+                        updateButton.textContent = task.done ? 'Hoàn tác (Undo)' : 'Hoàn thành (Done)';
+                        updateButton.className = 'update';
+                        updateButton.onclick = function() {
+                            toggleTaskStatus(task.id, !task.done); // Gọi hàm PUT
+                        };
+                        li.appendChild(updateButton);
+
+                        // --- Nút Xóa (DELETE) ---
+                        const deleteButton = document.createElement('button');
+                        deleteButton.textContent = 'Xóa';
+                        deleteButton.onclick = function() {
+                            deleteTask(task.id); // Gọi hàm DELETE
+                        };
+                        li.appendChild(deleteButton);
+
+                        taskListElement.appendChild(li);
+                    });
+                })
+                .catch(error => {
+                    console.error('Lỗi khi tải tasks:', error);
+                    document.getElementById('task-list').innerHTML = '<li>Lỗi tải API.</li>';
+                });
+        }
+
+        // --- 2. [POST] Tạo task mới ---
+        document.getElementById('btn-create').onclick = function() {
+            const title = document.getElementById('task-title').value;
+            const description = document.getElementById('task-desc').value;
+
+            if (!title) {
+                alert('Title là bắt buộc!');
+                return;
+            }
+
+            // fetch với phương thức POST
+            fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', // Báo cho server biết ta gửi JSON
+                },
+                body: JSON.stringify({ // Chuyển object JS thành chuỗi JSON
+                    title: title,
+                    description: description
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Tạo thành công:', data);
+                // Xóa chữ trong ô input
+                document.getElementById('task-title').value = '';
+                document.getElementById('task-desc').value = '';
+                // Tải lại danh sách để thấy task mới
+                loadTasks(); 
+            })
+            .catch(error => console.error('Lỗi khi tạo task:', error));
+        };
+
+        // --- 3. [DELETE] Xóa một task ---
+        function deleteTask(taskId) {
+            if (!confirm(`Bạn có chắc muốn xóa task ID: ${taskId}?`)) {
+                return; // Người dùng hủy
+            }
+
+            // fetch với phương thức DELETE
+            fetch(`${API_URL}/${taskId}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Xóa thành công:', data);
+                // Tải lại danh sách
+                loadTasks(); 
+            })
+            .catch(error => console.error('Lỗi khi xóa task:', error));
+        }
+
+        // --- 4. [PUT] Cập nhật trạng thái 'done' ---
+        function toggleTaskStatus(taskId, newStatus) {
+            
+            // fetch với phương thức PUT
+            fetch(`${API_URL}/${taskId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    done: newStatus // Chỉ gửi trường 'done'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Cập nhật thành công:', data);
+                // Tải lại danh sách
+                loadTasks();
+            })
+            .catch(error => console.error('Lỗi khi cập nhật task:', error));
+        }
+
+        // --- Tải danh sách tasks lần đầu tiên khi trang mở ---
+        loadTasks();
+
+    </script>
+</body>
+</html>
