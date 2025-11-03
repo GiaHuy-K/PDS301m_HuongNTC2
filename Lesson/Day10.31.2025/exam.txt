@@ -1,0 +1,43 @@
+1. Khoi tao array 2D, co 5 dong, 5 cot, gia tri phan tu la int, tu 10->30
+2. reshape thanh array 1D
+3. Extract items in array which is odd numbers
+arr[arr%2==1]
+4. replace odd numbers in arr with -1
+arr[arr%2 == 1] = -1
+5. Get common items between numpy arrays? (arr1, arr2)
+np.intersect1d(arr1, arr2)
+6. Find the max value in 1D array
+
+1. Create a matrix of student scores
+import numpy as np
+
+np.random.seed(42)
+scores = np.random.randint(50, 100, size=(10, 5))
+subjects = ["Math", "Physics", "Chemistry", "English", "History"]
+students = [f"Student_{i+1}" for i in range(10)]
+1. What is the shape, size, and data type of the scores array?
+2. Print all the scores of Student_x (ex: student_3)
+3. Print all the scores of subject Physics
+4. Display the 3x3 subarray of the top-left corner of the matrix
+5. Change the score of Student_1 in Math to 95
+Section 2: Statistical Computation
+1. Compute the average score of each student.
+2. Compute the average score of each subject.
+3. Find the highest and lowest scores in the entire dataset.
+4. Identify the student with the highest overall average.
+5. Identify the subject with the lowest class average.
+
+Section 2: Statistical Computation
+1. Compute the average score of each student.
+2. Compute the average score of each subject.
+3. Find the highest and lowest scores in the entire dataset.
+4. Identify the student with the highest overall average.
+5. Identify the subject with the lowest class average.
+Section 3: Conditional Filtering
+1. List all students whose average score ≥ 80.
+2. Find all scores that are below 60 and replace them with 60 (to simulate a minimum passing mark).
+Section 4: Combining & Sorting
+1. Combine students and their average scores into one array using np.column_stack().
+2. Sort this combined array by average score (descending).
+3. Display the top 3 students.
+4. Compute the class median score and compare it with the mean — which is higher?
