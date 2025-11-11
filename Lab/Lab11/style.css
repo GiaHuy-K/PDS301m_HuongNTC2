@@ -1,55 +1,128 @@
-/* file: style.css */
 body { 
     font-family: sans-serif; 
     margin: 20px; 
+    background-image: url('Background.png'); 
+    
+    /* 2. (Khuyên dùng) Các thuộc tính để ảnh đẹp hơn */
+    background-size: cover; /* Phủ kín trang */
+    background-position: center; /* Căn giữa ảnh */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+    background-attachment: fixed; /* Giữ ảnh cố định khi cuộn */
     background-color: #f4f4f4; 
+    /* Thêm: Đặt kích thước chữ cơ bản */
+    font-size: 16px; 
 }
+
 h1, h2 { 
-    color: #333; 
+    color: #fff; /* Đổi thành màu trắng */
+    
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6); 
 }
+
 ul { 
     list-style-type: none; 
     padding: 0; 
 }
+
 li { 
     background-color: #fff; 
     border: 1px solid #ddd; 
     margin-bottom: 10px; 
-    padding: 10px; 
+    padding: 10px 15px; /* Tăng padding 1 chút */
     display: flex; 
     justify-content: space-between; 
-    align-items: center; 
+    align-items: center;
+    border-radius: 4px; /* Thêm: Bo góc cho đẹp */
+    /* Thêm: Transition cho mượt khi đổi màu nền */
+    transition: background-color 0.2s ease; 
 }
+
 button { 
-    background-color: #e60000; 
+    background-color: #e60000; /* Nút Xóa (mặc định) */
     color: white; 
     border: none; 
-    padding: 5px 10px; 
+    /* Tăng padding cho nút dễ bấm hơn */
+    padding: 8px 12px; 
     cursor: pointer; 
     border-radius: 3px; 
-    margin-left: 5px; /* Thêm một chút khoảng cách */
+    margin-left: 5px; 
+    /* ---- YÊU CẦU 1: Thêm transition cho hiệu ứng hover ---- */
+    transition: background-color 0.2s ease;
 }
+
+/* ---- YÊU CẦU 1: Hiệu ứng hover cho nút Xóa ---- */
+button:hover {
+    background-color: #c00000; /* Đỏ đậm hơn */
+}
+
 button.update { 
-    background-color: #007bff; 
+    background-color: #007bff; /* Nút Cập nhật */
 }
+
+/* ---- YÊU CẦU 1: Hiệu ứng hover cho nút Cập nhật ---- */
+button.update:hover {
+    background-color: #0056b3; /* Xanh đậm hơn */
+}
+
 .task-info { 
     flex-grow: 1; 
+    /* Thêm: Chút khoảng cách với nút */
+    margin-right: 10px; 
 }
-.task-done-true { 
+
+/* ---- YÊU CẦU 3: Thay đổi style task đã hoàn thành ---- */
+/* Giờ đây class này áp dụng cho <li> */
+li.task-done-true { 
+    background-color: #f0f0f0; /* Đổi màu nền của cả hàng */
+    opacity: 0.7; /* Làm nó mờ đi 1 chút */
+}
+
+/* Class này sẽ chỉ gạch chân phần text, không gạch nút */
+.task-done-true .task-info { 
     text-decoration: line-through; 
     color: #888; 
 }
+
+/* ---- YÊU CẦU 2: Căn chỉnh Form ---- */
 #create-form { 
     background-color: #fff; 
     padding: 15px; 
     border: 1px solid #ddd; 
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    border-radius: 4px; /* Thêm: Bo góc */
+    
+    /* Thêm: Dùng Flexbox để căn chỉnh */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Thêm: Khoảng cách giữa các phần tử */
 }
+
 #create-form input { 
     width: 300px; 
     padding: 8px; 
-    margin-right: 10px; 
+    /* Xóa: margin-right (vì đã dùng 'gap' ở trên) */
+    /* margin-right: 10px; */ 
+
+    /* Thêm: Style cho input đẹp hơn */
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
+
+/* Thêm: Cho input co giãn tốt hơn */
+#create-form input#task-title {
+    flex-grow: 1; /* Cho phép input title co giãn */
+}
+#create-form input#task-desc {
+    flex-grow: 2; /* Cho phép input desc co giãn nhiều hơn */
+}
+
 #btn-create {
-    background-color: #28a745;
+    background-color: #28a745; /* Nút Tạo */
+    /* Nút tạo task nên to hơn 1 chút */
+    padding: 9px 15px; 
+}
+
+/* ---- YÊU CẦU 1: Hiệu ứng hover cho nút Tạo ---- */
+#btn-create:hover {
+    background-color: #218838; /* Xanh lá đậm hơn */
 }

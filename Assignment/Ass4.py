@@ -63,7 +63,7 @@ class ShoppingCart:
         """Thêm một (hoặc nhiều) món hàng vào giỏ"""
         # (Trong bài toán thực tế, ta nên kiểm tra 'item' có trong kho không)
         print(f"   -> Đã thêm {quantity} x {item.name} vào giỏ.")
-        # Tạm thời đơn giản hóa: thêm 'quantity' lần
+        
         for _ in range(quantity):
             self.items.append(item)
             item.stock -= 1 # Giảm tồn kho
@@ -71,7 +71,6 @@ class ShoppingCart:
     def remove_item(self, item_name):
         """Xóa MỘT món hàng khỏi giỏ bằng tên"""
         # Dùng 'next' để tìm item đầu tiên trong giỏ có tên khớp
-        # Đây là ví dụ về Exception Handling (StopIteration)
         try:
             item_to_remove = next(item for item in self.items if item.name.lower() == item_name.lower())
             self.items.remove(item_to_remove)

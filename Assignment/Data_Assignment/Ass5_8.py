@@ -2,22 +2,20 @@ import json
 import os
 os.chdir(r"C:\Users\Admin\Desktop\PDS301m_HuongNTC2\PDS301m_HuongNTC2-\Assignment\Data_Assignment")
 print("Đang đọc inventory.txt...")
-inventory_list = [] # List để chứa các dict
+inventory_list = [] 
 try:
     with open('inventory.txt', 'r') as f:
         for line in f:
-            
             line = line.strip() 
             if line: # Bỏ qua các dòng trống
                 # Tách chuỗi bằng dấu phẩy
                 name, price, category, stock = line.split(',')
                 
-                
                 item_dict = {
                     'name': name,
-                    'price': float(price), # Chuyển "1.50" thành số 1.50
+                    'price': float(price), # Chuyển String sang số thực
                     'category': category,
-                    'stock': int(stock) # Chuyển "100" thành số 100
+                    'stock': int(stock)
                 }
                 inventory_list.append(item_dict)
                 
@@ -170,10 +168,10 @@ print("\n--- BẮT ĐẦU BÀI 8: TÍCH HỢP ---")
 try:
     # Đọc file CSV mới vào một DataFrame khác
     sales_df = pd.read_csv('sales.csv')
-    print(" -> Đã tải file 'sales.csv':")
+    print(" file 'sales.csv':")
     print(sales_df.to_string())
 except FileNotFoundError:
-    print("LỖI: Không tìm thấy file 'sales.csv'. Anh đã tạo file này chưa?")
+    print("LỖI: Không tìm thấy file 'sales.csv'. Cưng đã tạo file này chưa?")
     exit()
 
 # --- 2. Xử lý Giao dịch và Tính toán (Merge) ---
@@ -189,7 +187,7 @@ try:
         how='left' # Giữ tất cả sales, kể cả nếu không tìm thấy trong kho
     )
 except NameError:
-    print("LỖI: Không tìm thấy DataFrame 'df'. Anh đã chạy code Bài 6 chưa?")
+    print("LỖI: Không tìm thấy DataFrame 'df'. Cưng đã chạy code Bài 6 chưa?")
     exit()
 
 # Áp dụng giảm giá (lấy từ Bài 6)
